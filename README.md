@@ -17,4 +17,5 @@ Thats it!!!
 to make the changes null from above script run the below commands one by one with root previliges
 
 `rm -r /etc/dconf/profile/user /etc/dconf/db/local.d`
+
 `dconf update`
