@@ -2,9 +2,11 @@
 
 keys=/etc/dconf/db/local.d/00-bg
 locks=/etc/dconf/db/local.d/locks/background
+profile=/etc/dconf/profile/user
 
 install -Dv /dev/null $keys
-install -Dv /dev/null $locks									
+install -Dv /dev/null $locks
+install -Dv /dev/null $profile
 
 echo "[org/gnome/desktop/background]
 picture-uri='file:///usr/share/backgrounds/Stargazing_by_Marcel_Kächele.jpg'
@@ -27,5 +29,8 @@ echo "/org/gnome/desktop/background/picture-uri
 /org/gnome/desktop/screensaver/picture-options
 /org/gnome/desktop/screensaver/primary-color
 /org/gnome/desktop/screensaver/secondary-color" >> $locks
+
+echo "user-db:user
+system-db:local" >> $profile
 
 dconf update
